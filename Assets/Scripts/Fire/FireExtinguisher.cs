@@ -8,11 +8,17 @@ public class FireExtinguisher : MonoBehaviour
     [SerializeField] private GameObject hose1;
     [SerializeField] private GameObject hose2;
     [SerializeField] private GameObject effect;
+    [SerializeField] private GameObject menu;
 
     private bool isPinRemoved = false;
 
     private Animator animator;
     private ParticleSystem ps;
+
+    private int type;   // 소화기 종류: 0-A급, 1-B급, 2-C급
+    public int Type => type;
+
+   private bool isSelected = false;
 
     private void Awake()
     {
@@ -20,6 +26,11 @@ public class FireExtinguisher : MonoBehaviour
         ps = effect.GetComponent<ParticleSystem>();
     }
 
+    public void ShowMenu()
+    {
+        if (!isSelected)
+            menu.SetActive(true);
+    }
 
     public void RemovePin()
     {
@@ -80,5 +91,28 @@ public class FireExtinguisher : MonoBehaviour
         yield return new WaitForSeconds(2);
         hose1.SetActive(false);
         hose2.SetActive(true);
+    }
+
+    
+    // menu
+    public void OnSelectAtype()
+    {
+        type = 0;
+        isSelected = true;
+        menu.SetActive(false);
+    }
+
+    public void OnSelectBtype()
+    {
+        type = 1;
+        isSelected = true;
+        menu.SetActive(false);
+    }
+
+    public void OnSelectCtype()
+    {
+        type = 2;
+        isSelected = true;
+        menu.SetActive(false);
     }
 }

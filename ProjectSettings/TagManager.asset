@@ -8,6 +8,7 @@ TagManager:
   - water
   - finish
   - fire
+  - extinguisher
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Object
   - 
   - 
   - 
