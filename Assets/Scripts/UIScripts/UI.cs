@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class UI : MonoBehaviour
+public class UI : MonoBehaviour
 {
-    //public abstract void Initialize();
     public virtual void Hide() => gameObject.SetActive(false);
     public virtual void Show() => gameObject.SetActive(true);
 }
