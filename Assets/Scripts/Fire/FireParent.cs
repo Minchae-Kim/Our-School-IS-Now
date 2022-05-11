@@ -5,34 +5,36 @@ using UnityEngine.Events;
 
 public class FireParent : MonoBehaviour
 {
-    public UnityEvent offFire;
-    private GameObject[] fires = new GameObject[2];
+    public UnityEvent onFireOff;
+    private List<GameObject> fires = new List<GameObject>();
 
     private void Awake()
     {
-        fires[0] = transform.GetChild(0).gameObject;
-        fires[1] = transform.GetChild(1).gameObject;
+        foreach (Transform fire in transform)
+            fires.Add(fire.gameObject);
     }
 
     private void Update()
     {
-        if(!isFire())
+        if(!isFireOff())
         {
-            if (offFire == null)
+            if (onFireOff == null)
                 Debug.Log("불꺼짐 이벤트에 아무것도 없습니다.");
             else
             {
-                offFire.Invoke();
+                onFireOff.Invoke();
                 this.gameObject.SetActive(false);
             }
         }
     }
 
-    private bool isFire()
+    private bool isFireOff()
     {
-        if (!fires[0].activeSelf && !fires[1].activeSelf)
-            return false;
-        return true;
+        foreach (var fire in fires)
+            if (fire.activeSelf)
+                return true;
+
+        return false;
     }
 
 

@@ -24,17 +24,17 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void Show(GameObject UI)
-    {
-        UI.SetActive(true);
-    }
+    //public void Show(GameObject UI)
+    //{
+    //    UI.SetActive(true);
+    //}
 
-    public void Hide(GameObject UI)
-    {
-        UI.SetActive(false);
-    }
+    //public void Hide(GameObject UI)
+    //{
+    //    UI.SetActive(false);
+    //}
 
-    public void ReduceFireCont()
+    public void ReduceFireCount()
     {
         if (nowFireCount > 0)
             nowFireCount--;
@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void RenewalFireText()
     {
-        fireCountText.text = $"Remain Fire : {nowFireCount}";
+        fireCountText.text = $"남은 화재 장소: {nowFireCount}";
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StartingFire : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StartingFire : MonoBehaviour
         get { return fireType; }
         set { fireType = value; }
     }
+
 
     void Start()
     {
