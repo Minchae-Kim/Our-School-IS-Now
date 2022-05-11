@@ -11,6 +11,12 @@ public class Fire : MonoBehaviour
         get { return hp; }
         set { if (hp > 0) hp = value; }
     }
+    private int fireType;
+    public int FireType
+    {
+        get { return fireType; }
+        set { fireType = value; }
+    }
 
     private void Update()
     {

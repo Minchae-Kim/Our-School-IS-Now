@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private GameObject startFire1;
+    [SerializeField] private GameObject startFire2;
+
     private void Awake()
     {
         if (instance == null)
@@ -16,11 +19,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        randomFire();
+        StartRandomFire();
     }
 
-    private void randomFire()
+    private void StartRandomFire()
     {
-
+        int type = Random.Range(0, 3);
+        startFire1.GetComponent<Fire>().FireType = type;
+        startFire2.GetComponent<Fire>().FireType = type;
     }
+
+    
 }
