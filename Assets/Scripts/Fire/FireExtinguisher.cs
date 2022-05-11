@@ -15,8 +15,12 @@ public class FireExtinguisher : MonoBehaviour
     private Animator animator;
     private ParticleSystem ps;
 
-    private int type;   // 소화기 종류: 0-A급, 1-B급, 2-C급
-    public int Type => type;
+    [SerializeField] private int fireExtinguisherType;   // 소화기 종류: 0-A급, 1-B급, 2-C급
+    public int FireExtinguisherType
+    {
+        get { return fireExtinguisherType; }
+        set { fireExtinguisherType = value; }
+    }
 
    private bool isSelected = false;
 
@@ -97,21 +101,21 @@ public class FireExtinguisher : MonoBehaviour
     // menu
     public void OnSelectAtype()
     {
-        type = 0;
+        fireExtinguisherType = 0;
         isSelected = true;
         menu.SetActive(false);
     }
 
     public void OnSelectBtype()
     {
-        type = 1;
+        fireExtinguisherType = 1;
         isSelected = true;
         menu.SetActive(false);
     }
 
     public void OnSelectCtype()
     {
-        type = 2;
+        fireExtinguisherType = 2;
         isSelected = true;
         menu.SetActive(false);
     }

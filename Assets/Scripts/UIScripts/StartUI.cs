@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class StartUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject startingFire;
+
     void Start()
     {
-        
+        //int type = startingFire.GetComponent<StartingFire>().FireType;
+
+       
     }
 }

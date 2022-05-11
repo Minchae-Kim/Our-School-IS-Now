@@ -8,7 +8,17 @@ public class EffectInteraction : MonoBehaviour
     {
         if (other.tag == "fire")
         {
-            other.GetComponent<Fire>().HP -= 1;
+            GameObject fireExtinguisher = transform.parent.gameObject;
+            int fireExtinguisherType = fireExtinguisher.GetComponent<FireExtinguisher>().FireExtinguisherType;
+            int fireType = other.GetComponent<Fire>().FireType;
+
+            if (fireExtinguisherType != fireType)   //  잘못된 소화기 적용 경우
+            {
+                // 플레이어의 체력 깎임
+            }
+
+            else    // 올바른 소화기 적용 경우
+                other.GetComponent<Fire>().HP -= 1;
         }
     }
 }

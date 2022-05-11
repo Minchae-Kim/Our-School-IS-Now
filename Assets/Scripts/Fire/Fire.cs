@@ -11,7 +11,7 @@ public class Fire : MonoBehaviour
         get { return hp; }
         set { if (hp > 0) hp = value; }
     }
-    private int fireType;
+    [SerializeField] private int fireType;
     public int FireType
     {
         get { return fireType; }
