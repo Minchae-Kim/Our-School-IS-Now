@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class UIManager : MonoBehaviour
 {
     private static UIManager s_instance;
 
+    [SerializeField] private TMP_Text fireText;
     //화살표
-    [SerializeField] private GameObject explainArrow;
+    //[SerializeField] private GameObject explainArrow;
 
     //시작 ui, 물수건 제작 UI, 화재 종류 설명 ui
     //[SerializeField] private GameObject startUI;
     //[SerializeField] private GameObject towelUI;
     //[SerializeField] private GameObject fireTypeUI;
 
+    private int fireCount = 5;
 
 
     private void Awake() => s_instance = this;
@@ -33,6 +37,16 @@ public class UIManager : MonoBehaviour
         UI.SetActive(false);
     }
 
+    public void ReduceFire()
+    {
+        if (fireCount != 0)
+            fireCount--;
+    }
 
+    public void RenewalFireCount()
+    {
+        fireText.text = $"Reamin Fire : {fireCount}";
+        Debug.Log($"Reamin Fire : {fireCount}");
+    }
 
 }
