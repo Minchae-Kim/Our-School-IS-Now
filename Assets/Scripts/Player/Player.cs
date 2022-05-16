@@ -12,11 +12,12 @@ public class Player : MonoBehaviour
 
     public int ReducePlayerHp(int damage)
     {
+        hp -= damage;
         if(hp>0)
         {
-            hp -= damage;
+            return hp;
         }
-        return hp;
+        return 0;
     }
     public bool OnGrabTowel()
     {
