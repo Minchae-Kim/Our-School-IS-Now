@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Fire : MonoBehaviour
 {
-    [SerializeField] private int hp = 80;
+    [SerializeField] private int hp = 150;
     public int HP
     {
         get { return hp; }

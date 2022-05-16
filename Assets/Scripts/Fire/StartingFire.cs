@@ -16,6 +16,7 @@ public class StartingFire : MonoBehaviour
     void Start()
     {
         fireType = Random.Range(0, 3);
+        Debug.Log(fireType);
 
         foreach (Transform fire in transform)
             fire.GetComponent<Fire>().FireType = fireType;

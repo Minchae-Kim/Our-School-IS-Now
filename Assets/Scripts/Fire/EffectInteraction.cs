@@ -18,7 +18,9 @@ public class EffectInteraction : MonoBehaviour
             }
 
             else    // 올바른 소화기 적용 경우
+            {
                 other.GetComponent<Fire>().HP -= 1;
+            }
         }
     }
 }
