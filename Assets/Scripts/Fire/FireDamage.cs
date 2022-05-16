@@ -14,7 +14,11 @@ public class FireDamage : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
+        {
+            Debug.Log("Collision");
             StartCoroutine(Damage());
+        }
+            
     }
     private void OnTriggerExit(Collider other)
     {

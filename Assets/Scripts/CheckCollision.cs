@@ -12,13 +12,11 @@ public class CheckCollision : MonoBehaviour
         if (other.tag == "smoke" && !wetTowel.GetComponent<WetTowel>().IsGrabbed)
         {
             hitUI.SetActive(true);
-            Debug.Log("Collision!");
             return;
         }
         if (other.tag == "smoke" && wetTowel.GetComponent<WetTowel>().IsGrabbed)
         {
             hitUI.SetActive(false);
-            Debug.Log("Towel Grabbed & Collision!");
             return;
         }
     }
