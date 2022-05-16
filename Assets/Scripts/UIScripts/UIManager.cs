@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text fireCountText;
     private int nowFireCount = 5;
 
+    [SerializeField] private GameObject hitUI;
+
     private void Awake() => s_instance = this;
 
     public void ReduceFireCount()
@@ -22,6 +24,16 @@ public class UIManager : MonoBehaviour
     public void RenewalFireText()
     {
         fireCountText.text = $"남은 화재 장소: {nowFireCount}";
+    }
+
+    public void OnHitUI()
+    {
+        hitUI.SetActive(true);
+    }
+
+    public void OffHitUI()
+    {
+        hitUI.SetActive(false);
     }
 
 }

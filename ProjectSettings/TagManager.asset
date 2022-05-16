@@ -9,6 +9,7 @@ TagManager:
   - finish
   - fire
   - extinguisher
+  - smoke
   layers:
   - Default
   - TransparentFX

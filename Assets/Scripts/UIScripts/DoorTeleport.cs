@@ -10,6 +10,7 @@ public class DoorTeleport : MonoBehaviour
     [SerializeField] private GameObject teleportPoint;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject wetTowel;
+    [SerializeField] private GameObject smokeEffect;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class DoorTeleport : MonoBehaviour
             return;
         player.transform.position = teleportPoint.transform.position;
         player.transform.rotation = teleportPoint.transform.rotation;
+        smokeEffect.SetActive(true);
         interactable.enabled = false;
     }
 }
