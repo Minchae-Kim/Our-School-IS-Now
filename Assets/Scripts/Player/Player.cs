@@ -1,23 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class Player : MonoBehaviour
 {
-    public UnityEvent onPlayerEvent;
-
     public int hp = 100;
     public bool isGrabTowel = false;
 
-    public int ReducePlayerHp(int damage)
+    public void ReducePlayerHp()
     {
-        hp -= damage;
+        hp -= 10;
         if(hp>0)
         {
-            return hp;
+            return;
         }
-        return 0;
+        hp = 0;
     }
     public bool OnGrabTowel()
     {
