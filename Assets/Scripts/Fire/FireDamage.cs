@@ -5,24 +5,12 @@ using UnityEngine.Events;
 public class FireDamage : MonoBehaviour
 {
     public UnityEvent fireDamage;
-    IEnumerator Damage()
-    {
-        if (fireDamage != null)
-            fireDamage.Invoke();
-        yield return new WaitForSeconds(1.5f);
-    }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             Debug.Log("Collision");
-            StartCoroutine(Damage());
+            fireDamage.Invoke();
         }
-            
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-            StopCoroutine(Damage());
     }
 }

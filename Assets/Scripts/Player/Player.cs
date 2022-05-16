@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int hp = 100;
+    public float hp = 300;
 
 
     public void ReducePlayerHp()
     {
-        hp -= 10;
+        hp -= 0.5f;
         Debug.Log($"player hp : {hp}");
         if(hp>0)
         {
