@@ -10,6 +10,9 @@ public class FireExtinguisher : MonoBehaviour
     [SerializeField] private GameObject effect;
     [SerializeField] private GameObject menu;
 
+    private Vector3 initPosition;
+    private Quaternion initRotation;
+
     private bool isPinRemoved = false;
 
     private Animator animator;
@@ -28,12 +31,26 @@ public class FireExtinguisher : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         ps = effect.GetComponent<ParticleSystem>();
+
+        initPosition = gameObject.transform.position;
+        initRotation = gameObject.transform.rotation;
     }
 
     public void ShowMenu()
     {
         if (!isSelected)
             menu.SetActive(true);
+    }
+
+    public void EnableSelection()
+    {
+        isSelected = false;
+    }
+
+    public void Retransform()
+    {
+        gameObject.transform.position = initPosition;
+        gameObject.transform.rotation = initRotation;
     }
 
     public void RemovePin()

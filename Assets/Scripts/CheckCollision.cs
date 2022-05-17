@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class CheckCollision : MonoBehaviour
 {
-    [SerializeField] private GameObject hitUI;
     [SerializeField] private GameObject wetTowel;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "smoke" && !wetTowel.GetComponent<WetTowel>().IsGrabbed)
         {
-            hitUI.SetActive(true);
+            UIManager.s_instance.OnHitUI();
             GetComponent<Player>().ReducePlayerHp();
             return;
         }
         if (other.tag == "smoke" && wetTowel.GetComponent<WetTowel>().IsGrabbed)
         {
-            hitUI.SetActive(false);
+            UIManager.s_instance.OffHitUI();
             return;
         }
     }
@@ -26,7 +25,7 @@ public class CheckCollision : MonoBehaviour
     {
         if (other.tag == "smoke")
         {
-            hitUI.SetActive(false);
+            UIManager.s_instance.OffHitUI();
         }
     }
 }

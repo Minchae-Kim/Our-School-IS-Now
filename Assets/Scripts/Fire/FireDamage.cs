@@ -5,13 +5,12 @@ using UnityEngine.Events;
 public class FireDamage : MonoBehaviour
 {
     public UnityEvent fireDamage;
-    [SerializeField] private GameObject hitUI;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            hitUI.SetActive(true);
+            UIManager.s_instance.OnHitUI();
             fireDamage.Invoke();
         }
     }
@@ -20,7 +19,7 @@ public class FireDamage : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            hitUI.SetActive(false);
+            UIManager.s_instance.OffHitUI();
         }
     }
 }

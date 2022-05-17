@@ -6,9 +6,10 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    private static UIManager s_instance;
+    public static UIManager s_instance;
 
     [SerializeField] private TMP_Text fireCountText;
+    [SerializeField] private TMP_Text scoreText;
     private int nowFireCount = 5;
 
     [SerializeField] private GameObject hitUI;
@@ -36,4 +37,8 @@ public class UIManager : MonoBehaviour
         hitUI.SetActive(false);
     }
 
+    public void UpdateScore()
+    {
+        scoreText.text = $"점수: {GameManager.instance.score}";
+    }
 }
