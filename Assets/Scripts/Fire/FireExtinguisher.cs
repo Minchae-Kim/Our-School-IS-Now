@@ -35,19 +35,6 @@ public class FireExtinguisher : MonoBehaviour
         initPosition = gameObject.transform.position;
         initRotation = gameObject.transform.rotation;
     }
-    private void Start()
-    {
-        StartCoroutine(CheckIsSameType());
-    }
-    IEnumerator CheckIsSameType()
-    {
-        yield return new WaitForSeconds(3.0f);
-        if(!GetComponentInChildren<EffectInteraction>().IsSame)
-        {
-            GameObject.Find("XR Rig").GetComponent<Player>().ReducePlayerHp(3.0f);
-            GetComponentInChildren<EffectInteraction>().IsSame = true;
-        }
-    }
 
     public void ShowMenu()
     {

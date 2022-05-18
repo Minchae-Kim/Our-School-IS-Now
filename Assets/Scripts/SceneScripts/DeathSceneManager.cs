@@ -7,6 +7,8 @@ public class DeathSceneManager : MonoBehaviour
 {
     public void GameRestart()
     {
+        Time.timeScale = 1f;
+        GameManager.instance.time = GameManager.instance.re_time;
         SceneManager.LoadScene("SchoolSceneDayMobile_test");
     }
 

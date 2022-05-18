@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject hitUI;
 
+    [SerializeField] private TMP_Text timer;
+
     private void Awake() => s_instance = this;
 
     public void ReduceFireCount()
@@ -41,4 +43,12 @@ public class UIManager : MonoBehaviour
     {
         scoreText.text = $"점수: {GameManager.instance.score}";
     }
+
+    public void UpdateTimer()
+    {
+        int minute = (int)GameManager.instance.time / 60;
+        int seconds = (int)GameManager.instance.time % 60;
+        timer.text = minute.ToString() + " : " + seconds.ToString();
+    }
+
 }

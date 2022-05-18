@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
     [SerializeField] private float hp = 300;
+    public float HP => hp;
 
     public void ReducePlayerHp(float amount)
     {
