@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float hp = 300;
 
-    public void ReducePlayerHp()
+    public void ReducePlayerHp(float amount)
     {
         if (hp >= 0.5f)
             hp -= 0.5f;
@@ -19,4 +19,5 @@ public class Player : MonoBehaviour
             GameManager.instance.GameOver();
         }
     }
+
 }

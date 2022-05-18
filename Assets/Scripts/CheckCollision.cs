@@ -11,7 +11,7 @@ public class CheckCollision : MonoBehaviour
         if (other.tag == "smoke" && !wetTowel.GetComponent<WetTowel>().IsGrabbed)
         {
             UIManager.s_instance.OnHitUI();
-            GetComponent<Player>().ReducePlayerHp();
+            GetComponent<Player>().ReducePlayerHp(0.5f);
             return;
         }
         if (other.tag == "smoke" && wetTowel.GetComponent<WetTowel>().IsGrabbed)
