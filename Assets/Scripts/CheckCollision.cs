@@ -28,4 +28,12 @@ public class CheckCollision : MonoBehaviour
             UIManager.s_instance.OffHitUI();
         }
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "finish")
+        {
+            GameManager.instance.GameClear();
+        }
+    }
 }
