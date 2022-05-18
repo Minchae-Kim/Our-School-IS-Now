@@ -29,7 +29,7 @@ public class Fire : MonoBehaviour
 
         if (hp == 0)
         {
-            GameManager.instance.AddScore(100);            
+            GameManager.instance.AddScore(1);            
             ps.Stop();
             StartCoroutine(OffFire());
         }

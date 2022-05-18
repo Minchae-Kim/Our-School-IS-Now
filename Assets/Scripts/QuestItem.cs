@@ -14,6 +14,7 @@ public class QuestItem : MonoBehaviour
 
     private void Start()
     {
+        collectedItems = 0;
         interactable = GetComponent<XRSimpleInteractable>();
     }
 

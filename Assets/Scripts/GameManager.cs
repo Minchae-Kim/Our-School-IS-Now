@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int score = 0;
-    public float time = 0.0f;
+    public float time = 600.0f;
 
     private void Awake()
     {
@@ -21,6 +21,17 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
+    private void Start()
+    {
+        score = 0;
+        time = 600.0f;
+    }
+
+    private void Update()
+    {
+        
+    }
+
     public void AddScore(int amount)
     {
         score += amount;
@@ -29,11 +40,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameClearScene");
+        SceneManager.LoadScene("GameOverScene");
     }
 
     public void GameClear()
     {
-
+        SceneManager.LoadScene("GameClearScene");
     }
 }
