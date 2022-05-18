@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float hp = 300;
+    [SerializeField] private float hp = 500;
 
     public void ReducePlayerHp()
     {

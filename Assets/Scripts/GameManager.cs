@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
         else
             Destroy(this.gameObject);
     }
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameOverScene");
+        SceneManager.LoadScene("GameClearScene");
     }
 
     public void GameClear()
