@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text timer;
 
+    [SerializeField] private Image hpBar;
+
     private void Awake() => s_instance = this;
 
     public void ReduceFireCount()
@@ -51,4 +53,8 @@ public class UIManager : MonoBehaviour
         timer.text = minute.ToString() + " : " + seconds.ToString();
     }
 
+    public void UpdateHP(float hp)
+    {
+        hpBar.fillAmount = hp / 300f;
+    }
 }

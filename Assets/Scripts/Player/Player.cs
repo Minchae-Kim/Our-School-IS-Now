@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
     public void ReducePlayerHp(float amount)
     {
         if (hp >= 0.5f)
+        {
             hp -= 0.5f;
+            UIManager.s_instance.UpdateHP(hp);
+        }
         Debug.Log($"player hp : {hp}");
 
         if (hp <= 0)
