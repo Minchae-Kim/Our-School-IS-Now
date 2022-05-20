@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     public void GameClear()
     {
         Time.timeScale = 0;
-        score += 3 * (int)GameObject.Find("XR Rig").GetComponent<Player>().HP;
+        score += 2 * (int)GameObject.Find("XR Rig").GetComponent<Player>().HP;
         SceneManager.LoadScene("GameClearScene");
     }
 }
